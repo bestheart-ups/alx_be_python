@@ -1,24 +1,16 @@
 #defininig a function name 
-def perform_operation(num1: float, num2: float, operation: str):
-    """Perform basic arithmetic operations on two numbers."""
-
-    Parameters:
-        num1 (float): The first number.
-        num2 (float): The second number.
-        operation (str): The operation to perform ('add', 'subtract', 'multiply', 'divide').
-
-    Returns:
-        float or str: 
-        """The result of the arithmetic operation or an error message for division by zero."""
-    if operation == 'add':
+def perform_operation(num1, num2, operation):
+    if operation == "add":
         return num1 + num2
-    elif operation == 'subtract':
+    elif operation == "subtract":
         return num1 - num2
-    elif operation == 'multiply':
+    elif operation == "multilpy":
         return num1 * num2
-    elif operation == 'divide':
+    elif operation == "division":
         if num2 == 0:
-            return "Error: Division by zero is not allowed."
+            raise ZeroDivisionError("division by zero is not allowed")
         return num1 / num2
     else:
-        return "Error: Invalid operation."
+        print("invalid operation")
+    result = perform_operation(3, 0, "divide")
+    print(result)
